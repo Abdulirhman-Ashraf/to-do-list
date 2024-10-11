@@ -1,4 +1,44 @@
-body{
-    background: url("./image/bg.jpg")  no-repeat ;
-    background-size: cover;
+img{
+    min-width: 200px ;
+    height: 200px;
+}
+.Introduce{
+    height:100% ;
+    padding-top:40px ;
+    overflow: hidden;
+    margin-block:200px;
+
+}
+.contact{
+    height: 100%;
+    padding-top:40px ;
+    margin-block: 20px;
+    overflow: hidden;
+    margin-block:120px;
+
+}
+.contact h2{
+margin-bottom:15px ;
+}
+.contact input,
+.contact textarea{
+    width: 100%;
+    background-color: #eee;
+    margin-bottom: 20px;
+    border: none;
+    font-size: 10px;
+    padding: 10px;
+}
+footer{
+    background-color: #EEEEEE;
+    height: 100%;
+    overflow: hidden;
+}
+footer a{
+    color: #18216D;
+    font-size: 30px;    
+    transition: linear .1s ;
+}
+footer a:hover{
+    color: #FF825C;
 }
