@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
 import Card from "react-bootstrap/Card";
 import { useDispatch, useSelector } from "react-redux";
 import { remove } from "../rtk/completed-slice";
+import doneImg from "../images/12f0244b-a8b6-4b5b-8fac-06b0ad221334-removebg-preview.png";
+import { Link } from "react-router-dom";
 const Completed = () => {
   const doneTasks = useSelector((state) => state.completed);
   const dispatch = useDispatch();
-
-  const handleDelete=(task)=>{
+  const handleDelete = (task) => {
     Swal.fire({
       title: "Do you want to delete this task?",
       icon: "warning",
@@ -17,17 +18,15 @@ const Completed = () => {
       showCancelButton: false,
       confirmButtonText: "Delete",
       denyButtonText: `Don't delete`,
-      confirmButtonColor: '#875D37',
-      denyButtonColor: '#93785B',
-  
-      
+      confirmButtonColor: "#875D37",
+      denyButtonColor: "#93785B",
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        dispatch(remove(task))
+        dispatch(remove(task));
       }
     });
-  }
+  };
   return (
     <>
       <Container>
@@ -37,12 +36,7 @@ const Completed = () => {
           </h2>
           {doneTasks.length !== 0 ? (
             doneTasks.map((task) => {
-              const colors = [
-                "#875D37",
-                "#93785B",
-                "#EDC8B8",
-                "#F7EAA1",
-              ];
+              const colors = ["#875D37", "#93785B", "#EDC8B8", "#F7EAA1"];
               const index = Math.floor(Math.random() * colors.length);
               const tasksRandomColor = colors[index];
               return (
@@ -53,7 +47,7 @@ const Completed = () => {
                       style={{
                         width: "300px",
                         height: "200px",
-                        margin:"auto",
+                        margin: "auto",
                         backgroundColor: `${tasksRandomColor}`,
                       }}
                     >
@@ -70,13 +64,13 @@ const Completed = () => {
                       </Card.Body>
                       <Card.Footer>
                         <MdDelete
-                               style={{
+                          style={{
                             fontSize: "35px",
                             float: "center",
                             cursor: "pointer",
                             Color: "93785B",
                           }}
-                          onClick={()=>handleDelete(task)}
+                          onClick={() => handleDelete(task)}
                         />
                       </Card.Footer>
                     </Card>
@@ -85,12 +79,13 @@ const Completed = () => {
               );
             })
           ) : (
-            <div>
+            <>
+
               <h3 className="my-3 text-center text-warning-emphasis">
                 “Procrastination makes easy things hard and hard things harder.”
                 —Mason Cooley
               </h3>
-            </div>
+            </>
           )}
         </Row>
       </Container>

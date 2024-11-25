@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import { useDispatch } from "react-redux";
 import { addTask } from "../rtk/tasksSlice";
 import { useNavigate } from "react-router-dom";
+import goodJobImage from '../images/2bdd22c6-938e-41e7-9201-133dde35e026-removebg-preview.png'
 import Swal from "sweetalert2";
 const AddTask = (props) => {
   const navigation = useNavigate();
@@ -28,9 +29,11 @@ const AddTask = (props) => {
       navigation("/");
       Swal.fire(
         {title:"best wishes for you!",
-          icon:"success",
           confirmButtonColor: '#93785B',
-
+          imageUrl: goodJobImage,
+          imageWidth: 270,
+          imageHeight: 300,
+          imageAlt: "Custom image"
         });
       props.handleClose()
     } else {
