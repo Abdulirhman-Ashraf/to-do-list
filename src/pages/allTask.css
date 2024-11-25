@@ -1,0 +1,32 @@
+.addTaskCard {
+    background-color: #7d7d7d3b !important;
+    width: 300px;
+    height: 200px;
+    position: relative;
+    transform: translate(-50%, -50%);
+    margin-bottom: 15px;
+    top: 50%;
+    left: 50%;
+    border: 2px solid rgba(107, 99, 107, 0.31) !important;
+}
+
+.addTaskCard h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #573b3b;
+}
+
+.addTaskCard:hover {
+    background-color: rgba(134, 134, 158, 0.158) !important;
+}
+
+.modal-header {
+    background-color: #875D37;
+    color: white;
+}
+
+.modal-body {
+    background-color: #573b3b40;
+}

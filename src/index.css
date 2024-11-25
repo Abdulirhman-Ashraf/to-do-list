@@ -6,8 +6,9 @@
 }
 
 body{
-  text-transform: capitalize;
-  color: #18216D;
+  text-transform: capitalize !important;
+  text-align: center;
+  background-color: #A69180 !important;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
